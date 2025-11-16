@@ -131,37 +131,102 @@ def extract_text_from_pdf(file_stream: io.BytesIO) -> str:
                 text += page_text + "\n"
     return text
 
-def _sanitize_for_ai(text: str) -> str:
-    """Redact potentially sensitive content."""
+def _sanitize_for_ai(text: str, aggressive: bool = False) -> str:
+    """Redact potentially sensitive content to pass AI safety filters."""
     if not text:
         return text
-    original_len = len(text)
-    # Remove emails more aggressively
-    text = re.sub(r'[A-Za-z0-9_.+-]+@[A-Za-z0-9-]+\.[A-Za-z0-9.-]+', '[EMAIL_REDACTED]', text)
-    # Remove phone numbers
-    text = re.sub(r'(?:\+?\d[\s.-]?){7,15}', '[PHONE_REDACTED]', text)
-    # Remove URLs
-    text = re.sub(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', '[URL_REDACTED]', text)
-    # Remove addresses
+    
+    # STEP 1: Remove all email addresses (multiple patterns)
+    text = re.sub(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b', '', text, flags=re.IGNORECASE)
+    text = re.sub(r'\b[A-Z0-9._%+-]+\s*@\s*[A-Z0-9.-]+\.[A-Z]{2,}\b', '', text, flags=re.IGNORECASE)
+    
+    # STEP 2: Remove all phone numbers (comprehensive patterns)
+    text = re.sub(r'\+?\d{1,4}[-.\s]?\(?\d{1,4}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}', '', text)
+    text = re.sub(r'\b\d{3}[-.\s]?\d{3}[-.\s]?\d{4}\b', '', text)
+    text = re.sub(r'\(\d{3}\)\s*\d{3}[-.\s]?\d{4}', '', text)
+    
+    # STEP 3: Remove all URLs and domains
+    text = re.sub(r'http[s]?://[^\s]+', '', text)
+    text = re.sub(r'www\.[^\s]+', '', text, flags=re.IGNORECASE)
+    text = re.sub(r'\b[a-z0-9.-]+\.(?:com|org|net|edu|gov|io|co|uk|ca)\b', '', text, flags=re.IGNORECASE)
+    
+    # STEP 4: Remove social media handles and links
+    text = re.sub(r'(?:linkedin|github|twitter|facebook|instagram)\.com[^\s]*', '', text, flags=re.IGNORECASE)
+    text = re.sub(r'@[A-Za-z0-9_]+', '', text)
+    
+    # STEP 5: Remove identification numbers
+    text = re.sub(r'\b\d{3}-\d{2}-\d{4}\b', '', text)  # SSN
+    text = re.sub(r'\b\d{9,}\b', '', text)  # Long numbers
+    text = re.sub(r'\b\d{5}(?:-\d{4})?\b', '', text)  # Zip codes
+    
+    # STEP 6: Remove address-related content (line by line)
     cleaned_lines = []
+    address_keywords = [
+        "street", "st.", "st ", "avenue", "ave.", "ave ", "road", "rd.", "rd ",
+        "drive", "dr.", "dr ", "boulevard", "blvd.", "blvd ", "lane", "ln.", "ln ",
+        "court", "ct.", "ct ", "circle", "cir.", "way", "place", "pl.",
+        "apartment", "apt", "apt.", "suite", "ste", "ste.", "unit", "floor",
+        "building", "p.o. box", "po box", "pobox"
+    ]
+    
     for line in text.splitlines():
-        lower = line.lower()
+        lower = line.lower().strip()
+        
+        # Skip empty lines
+        if not lower:
+            cleaned_lines.append(line)
+            continue
+            
         # Skip lines with address indicators
-        if any(tok in lower for tok in ["street", "st.", "avenue", "ave", "road", "rd.", "boulevard", "blvd", "apt", "suite", "unit"]):
+        has_address = any(f" {keyword}" in f" {lower}" or f"{keyword} " in f"{lower} " 
+                         for keyword in address_keywords)
+        if has_address:
             continue
-        # Skip lines with zip codes
-        if re.search(r'\b\d{5}(?:-\d{4})?\b', line):
+            
+        # Skip lines that look like addresses (number + street pattern)
+        if re.search(r'\b\d+\s+[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\s*(?:Street|St|Avenue|Ave|Road|Rd|Drive|Dr|Lane|Ln|Boulevard|Blvd)', line, re.IGNORECASE):
             continue
+            
+        # Skip lines with city, state patterns
+        if re.search(r',\s*[A-Z]{2}\s*\d{5}', line):
+            continue
+        if re.search(r',\s*[A-Z][a-z]+\s+[A-Z]{2}', line):
+            continue
+            
         cleaned_lines.append(line)
+    
     text = "\n".join(cleaned_lines)
-    # Remove excessive newlines
-    text = re.sub(r'\n{3,}', '\n\n', text)
-    # Remove long number sequences
-    text = re.sub(r'\b\d{9,}\b', '[NUMBER_REDACTED]', text)
-    # Limit length
-    if len(text) > 8000:
-        text = text[:8000]
-    return text
+    
+    # STEP 7: Aggressive sanitization for second attempt
+    if aggressive:
+        # Remove dates (potential DOB)
+        text = re.sub(r'\b\d{1,2}[/-]\d{1,2}[/-]\d{2,4}\b', '', text)
+        text = re.sub(r'\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2},?\s+\d{4}\b', '', text, flags=re.IGNORECASE)
+        
+        # Remove any remaining long sequences of digits
+        text = re.sub(r'\b\d{4,}\b', '', text)
+        
+        # Remove PII-related lines
+        text = re.sub(r'(?:DOB|Date of Birth|SSN|Social Security|Driver\'?s License|Passport)[:\s]+[^\n]+', '', text, flags=re.IGNORECASE)
+        
+        # Remove lines with "born" or "age"
+        lines = []
+        for line in text.splitlines():
+            lower = line.lower()
+            if 'born' not in lower and 'age:' not in lower and 'age ' not in lower:
+                lines.append(line)
+        text = "\n".join(lines)
+    
+    # STEP 8: Clean up formatting
+    text = re.sub(r'\n{3,}', '\n\n', text)  # Remove excessive newlines
+    text = re.sub(r' {2,}', ' ', text)  # Remove excessive spaces
+    text = re.sub(r'^\s+|\s+$', '', text, flags=re.MULTILINE)  # Trim lines
+    
+    # STEP 9: Limit length
+    if len(text) > 6000:
+        text = text[:6000]
+    
+    return text.strip()
 
 @router.post("/analyze", response_model=FullAnalysisResponse, tags=["Analysis"])
 async def full_ai_analysis(
@@ -181,37 +246,31 @@ async def full_ai_analysis(
     finally:
         await cv_file.close()
 
-    sanitized_attempted = False
-    max_attempts = 3
+    # Pre-sanitize inputs aggressively from the start
+    cv_text = _sanitize_for_ai(cv_text, aggressive=True)
+    job_description = _sanitize_for_ai(job_description, aggressive=True)
+    print(f"✅ CV sanitized: {len(cv_text)} chars")
+    print(f"✅ Job description sanitized: {len(job_description)} chars")
+    
     try:
         quant_report = await get_quantitative_analysis(cv_text, job_description)
         
-        attempt = 1
-        while attempt <= max_attempts:
-            try:
-                ai_analyzer_response = await call_gemini_analyzer(
-                    cv_text=cv_text,
-                    job_text=job_description,
-                    cv_skills=quant_report.cv_skills,
-                    job_skills=quant_report.job_skills
+        try:
+            ai_analyzer_response = await call_gemini_analyzer(
+                cv_text=cv_text,
+                job_text=job_description,
+                cv_skills=quant_report.cv_skills,
+                job_skills=quant_report.job_skills
+            )
+            print(f"✅ AI analysis completed successfully")
+        except HTTPException as he:
+            print(f"❌ AI analysis failed: {he.detail}")
+            if he.status_code == 400 and 'safety' in he.detail.lower():
+                raise HTTPException(
+                    status_code=400,
+                    detail="Unable to process this CV/job description. Please ensure you've removed ALL personal information including: names, addresses, phone numbers, emails, and any identifying details. Focus on skills, experience, and qualifications only."
                 )
-                break
-            except HTTPException as he:
-                if he.status_code != 400 or 'safety' not in he.detail.lower():
-                    raise he
-                if attempt >= max_attempts:
-                    # If all attempts failed, return a more helpful error
-                    raise HTTPException(
-                        status_code=400,
-                        detail="The AI safety filter has blocked this content. Please ensure your CV and job description don't contain sensitive personal information (addresses, phone numbers, etc.) or potentially harmful content. Try uploading a sanitized version of your CV."
-                    )
-                # Try sanitizing more aggressively
-                cv_text = _sanitize_for_ai(cv_text)
-                job_description = _sanitize_for_ai(job_description)
-                sanitized_attempted = True
-                attempt += 1
-                print(f"⚠️ Safety filter triggered, retrying with sanitization (attempt {attempt}/{max_attempts})")
-                continue
+            raise he
 
         cv_profile_map = {p['skill'].lower(): p for p in ai_analyzer_response['cv_profile']}
         job_gap_profile = []

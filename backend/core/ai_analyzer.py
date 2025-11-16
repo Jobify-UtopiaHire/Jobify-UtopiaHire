@@ -25,10 +25,10 @@ try:
     }
     
     safety_settings = [
-        {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-        {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-        {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-        {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+        {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
+        {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
+        {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_NONE"},
+        {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"},
     ]
     
     model = genai.GenerativeModel(
@@ -144,6 +144,7 @@ def check_response_safety(response):
 
 ANALYZER_PROMPT_TEMPLATE = """
 You are a 'Skills Gap Analyzer' AI. I have extracted text from a CV and a Job Description. 
+Note: Personal information (emails, phone numbers, addresses) has been removed for privacy.
 Analyze them and return ONLY a valid JSON object.
 Based on the provided text, you must infer proficiency levels from 1 (basic) to 5 (expert). 
 - Look for words like 'expert', 'advanced', 'proficient' (3-4), or 'basic', 'familiar' (1-2) in the CV.
@@ -173,7 +174,7 @@ async def call_gemini_analyzer(cv_text: str, job_text: str, cv_skills: List[Any]
     cv_skills_simple = [{"skill": s.normalized, "evidence": s.evidence} for s in cv_skills]
     job_skills_simple = [s.normalized for s in job_skills]
     prompt = ANALYZER_PROMPT_TEMPLATE.format(
-        cv_text=cv_text[:4000], job_description=job_text[:4000],
+        cv_text=cv_text[:3000], job_description=job_text[:3000],
         cv_skills_list=json.dumps(cv_skills_simple, indent=2),
         job_skills_list=json.dumps(job_skills_simple, indent=2)
     )
@@ -186,7 +187,8 @@ async def call_gemini_analyzer(cv_text: str, job_text: str, cv_skills: List[Any]
 
 COACH_PROMPT_TEMPLATE = """
 You are 'UtopiaHire', an AI Career Coach. A user has a skills gap. 
-I will provide the target role, their critical gaps, irrelevant skills, AND THEIR FULL CV TEXT.
+I will provide the target role, their critical gaps, irrelevant skills, AND THEIR CV TEXT.
+Note: Personal information (emails, phone numbers, addresses) has been removed for privacy.
 Your job is to provide encouraging, actionable advice in a JSON format.
 
 Guidelines:
@@ -236,7 +238,7 @@ async def call_gemini_coach(job_title: str, gap_list: List[Dict], low_value_skil
         job_title=job_title,
         gap_list=json.dumps(gap_list, indent=2),
         low_value_skills_json=json.dumps(low_value_skills, indent=2),
-        cv_text=cv_text[:4000]
+        cv_text=cv_text[:3000]
     )
     
     try:

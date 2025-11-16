@@ -5,14 +5,12 @@ livekit-plugins-google
 livekit-plugins-noise-cancellation
 mem0ai
 duckduckgo-search
-langchain-community
 requests
 python-dotenv
 PyMuPDF
 python-docx
 pytesseract
 Pillow
-streamlit
 plotly
 fastapi
 uvicorn[standard]

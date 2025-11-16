@@ -75,6 +75,13 @@
 
 Whether you're preparing for your first job interview or looking to sharpen your skills for executive positions, Jobify provides personalized, adaptive interview practice sessions with detailed performance analytics and actionable feedback delivered straight to your inbox.
 
+### 📸 Platform Overview
+
+<div align="center">
+  <img src="docs/screenshots/Landing_Page.png" alt="Jobify Landing Page" width="800">
+  <p><em>Modern, intuitive landing page with seamless authentication</em></p>
+</div>
+
 ### 🎯 Key Features
 
 - 🔐 **Enterprise Security**: JWT authentication, OAuth 2.0, rate limiting, XSS/CSRF protection, and comprehensive security headers
@@ -84,6 +91,22 @@ Whether you're preparing for your first job interview or looking to sharpen your
 - 📊 **Performance Analytics**: Comprehensive tracking with score history, improvement metrics, and detailed session reports
 - 🌐 **Multi-Language Support**: Built-in internationalization with support for English, French, and Arabic (including RTL)
 - 🎨 **Modern UI/UX**: Responsive dark theme design with 3D shader backgrounds, drag-and-drop uploads, and smooth animations
+
+### 🎬 Feature Showcase
+
+<div align="center">
+  <img src="docs/screenshots/skills-gap-analysis.png" alt="Skills Gap Analysis" width="800">
+  <p><em>AI-powered skills gap analysis showing matched strengths and areas for improvement</em></p>
+  <br/>
+  <img src="docs/screenshots/Cv_reader_and_rewriter.png" alt="CV Reader and Rewriter" width="800">
+  <p><em>Intelligent CV parsing and optimization with ATS-friendly suggestions</em></p>
+  <br/>
+  <img src="docs/screenshots/AI_interviwer.png" alt="AI Interviewer" width="800">
+  <p><em>Real-time AI interviewer with voice interaction and adaptive questioning</em></p>
+  <br/>
+  <img src="docs/screenshots/Job_matcher.png" alt="Job Matcher" width="800">
+  <p><em>Smart job matching based on your skills and experience</em></p>
+</div>
 
 <div align="right">
   <a href="#readme-top">

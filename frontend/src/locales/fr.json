@@ -1,0 +1,74 @@
+{
+  "welcome": {
+    "title": "Coach d'Entretien IA",
+    "subtitle": "Pratiquez les entretiens avec un coaching alimenté par l'IA. Recevez des retours personnalisés et améliorez vos compétences.",
+    "getStarted": "Commencer",
+    "features": {
+      "personalizedQuestions": {
+        "title": "Questions Personnalisées",
+        "description": "Questions adaptées à votre CV et au rôle cible pour une pratique réaliste"
+      },
+      "realTimeFeedback": {
+        "title": "Retours en Temps Réel",
+        "description": "Recevez des retours constructifs instantanés après chaque réponse"
+      },
+      "detailedReports": {
+        "title": "Rapports Détaillés",
+        "description": "Recevez une analyse complète des performances à la fin"
+      }
+    },
+    "footer": "Alimenté par LiveKit et la Technologie IA Avancée"
+  },
+  "upload": {
+    "title": "Téléchargez Votre CV",
+    "subtitle": "Téléchargez votre CV pour que nous puissions personnaliser votre expérience d'entretien",
+    "dragDrop": "Cliquez pour télécharger ou glissez-déposez",
+    "fileTypes": "PDF, DOC ou DOCX (max 10 Mo)",
+    "browseFiles": "Parcourir les fichiers",
+    "uploadSuccess": "Fichier téléchargé avec succès!",
+    "uploadDifferent": "Télécharger un Fichier Différent",
+    "uploading": "Téléchargement de votre CV en cours...",
+    "uploadError": "Échec du téléchargement du fichier. Veuillez réessayer.",
+    "invalidFileType": "Type de fichier invalide. Veuillez télécharger un PDF ou un document Word.",
+    "fileTooLarge": "Le fichier est trop volumineux. La taille maximale est de 10 Mo.",
+    "note": "Votre CV est utilisé uniquement pour cette session et n'est pas stocké de manière permanente.",
+    "continue": "Continuer vers l'Entretien",
+    "starting": "Lancement de l'entretien..."
+  },
+  "session": {
+    "states": {
+      "listening": "À l'écoute...",
+      "thinking": "Réflexion...",
+      "speaking": "En train de parler...",
+      "ready": "Prêt"
+    },
+    "help": "Parlez naturellement - le coach IA vous écoute",
+    "endCall": "Terminer l'Appel"
+  },
+  "error": {
+    "title": "Erreur de Connexion",
+    "troubleshooting": "Dépannage:",
+    "serverRunning": "Assurez-vous que le serveur backend s'exécute sur",
+    "checkCredentials": "Vérifiez que vos identifiants LiveKit sont configurés dans le fichier .env",
+    "verifyInternet": "Vérifiez votre connexion Internet",
+    "retry": "Réessayer la Connexion"
+  },
+  "header": {
+    "language": "Langue",
+    "theme": "Thème",
+    "light": "Clair",
+    "dark": "Sombre",
+    "system": "Système"
+  },
+  "home": {
+    "uploadPrompt": "Prêt à vous entraîner? Téléchargez votre CV pour commencer!",
+    "uploadReminder": "N'oubliez pas de télécharger votre CV pour une expérience personnalisée"
+  },
+  "notfound": {
+    "title": "Page Non Trouvée",
+    "description": "La page que vous recherchez n'existe pas",
+    "message": "Il semble que la page que vous tentez d'accéder n'existe pas ou a été déplacée.",
+    "backHome": "Retour à l'Accueil",
+    "goBack": "Retour"
+  }
+}

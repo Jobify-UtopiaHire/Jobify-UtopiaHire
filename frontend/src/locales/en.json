@@ -1,0 +1,74 @@
+{
+  "welcome": {
+    "title": "AI Interview Coach",
+    "subtitle": "Practice interviews with AI-powered coaching. Get personalized feedback and improve your skills.",
+    "getStarted": "Get Started",
+    "features": {
+      "personalizedQuestions": {
+        "title": "Personalized Questions",
+        "description": "Questions tailored to your CV and target role for realistic practice"
+      },
+      "realTimeFeedback": {
+        "title": "Real-time Feedback",
+        "description": "Get instant constructive feedback after each answer"
+      },
+      "detailedReports": {
+        "title": "Detailed Reports",
+        "description": "Receive comprehensive performance analysis at the end"
+      }
+    },
+    "footer": "Powered by LiveKit & Advanced AI Technology"
+  },
+  "upload": {
+    "title": "Upload Your CV",
+    "subtitle": "Upload your CV so we can personalize your interview experience",
+    "dragDrop": "Click to upload or drag and drop",
+    "fileTypes": "PDF, DOC, or DOCX (max 10MB)",
+    "browseFiles": "Browse Files",
+    "uploadSuccess": "File uploaded successfully!",
+    "uploadDifferent": "Upload Different File",
+    "uploading": "Uploading your CV...",
+    "uploadError": "Failed to upload file. Please try again.",
+    "invalidFileType": "Invalid file type. Please upload a PDF or Word document.",
+    "fileTooLarge": "File is too large. Maximum size is 10MB.",
+    "note": "Your CV is used only for this session and is not stored permanently.",
+    "continue": "Continue to Interview",
+    "starting": "Starting Interview..."
+  },
+  "session": {
+    "states": {
+      "listening": "Listening...",
+      "thinking": "Thinking...",
+      "speaking": "Speaking...",
+      "ready": "Ready"
+    },
+    "help": "Speak naturally - the AI coach is listening",
+    "endCall": "End Call"
+  },
+  "error": {
+    "title": "Connection Error",
+    "troubleshooting": "Troubleshooting:",
+    "serverRunning": "Make sure the backend server is running at",
+    "checkCredentials": "Check that your LiveKit credentials are configured in the .env file",
+    "verifyInternet": "Verify your internet connection",
+    "retry": "Retry Connection"
+  },
+  "header": {
+    "language": "Language",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "home": {
+    "uploadPrompt": "Ready to practice? Upload your CV to get started!",
+    "uploadReminder": "Don't forget to upload your CV for a personalized experience"
+  },
+  "notfound": {
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist",
+    "message": "It seems the page you are trying to access does not exist or has been moved.",
+    "backHome": "Back Home",
+    "goBack": "Go Back"
+  }
+}

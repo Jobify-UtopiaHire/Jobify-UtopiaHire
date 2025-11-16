@@ -1,0 +1,6 @@
+venv/
+frontend/
+__pycache__/
+.env
+cv_uploads/
+data/

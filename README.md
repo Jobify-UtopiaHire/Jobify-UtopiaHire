@@ -1,130 +1,95 @@
-# 🎯 Jobify - AI-Powered Interview Practice Platform
+<a name="readme-top"></a>
 
-> **Professional Interview Preparation with Advanced AI Technology and Enterprise Security**
+<div align="center">
 
-[![Security](https://img.shields.io/badge/security-enterprise%20grade-brightgreen)](SECURITY.md)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/python-3.13+-blue.svg)](https://www.python.org/)
-[![React](https://img.shields.io/badge/react-18.2+-61dafb.svg)](https://reactjs.org/)
-[![FastAPI](https://img.shields.io/badge/fastapi-latest-009688.svg)](https://fastapi.tiangolo.com/)
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![MIT License][license-shield]][license-url]
+[![Security][security-shield]](SECURITY.md)
+[![Python][python-shield]](https://www.python.org/)
+[![React][react-shield]](https://reactjs.org/)
 
-An intelligent, secure interview coaching platform that combines CV parsing, real-time AI voice interaction, comprehensive authentication, and personalized feedback to help job seekers excel in their interviews.
-
----
-
-## 📋 Table of Contents
-
-- [Features](#-features)
-- [Security](#-security)
-- [Architecture](#-architecture)
-- [Prerequisites](#-prerequisites)
-- [Installation](#-installation)
-- [Configuration](#-configuration)
-- [Usage](#-usage)
-- [API Documentation](#-api-documentation)
-- [Development](#-development)
-- [Deployment](#-deployment)
-- [Testing](#-testing)
-- [Troubleshooting](#-troubleshooting)
-- [Contributing](#-contributing)
-- [License](#-license)
+</div>
 
 ---
 
-## 🌟 Features
+# 🎯 Jobify - UtopiaHire
 
-### 🔐 Enterprise-Grade Security
-- **Authentication & Authorization**
-  - JWT-based secure sessions (2-hour access, 7-day refresh)
-  - OAuth 2.0 (Google & GitHub)
-  - Email verification system
-  - Strong password requirements
-  - Account lockout protection (5 attempts, 15-min lockout)
-  
-- **Protection Layers**
-  - SQL injection prevention (parameterized queries)
-  - XSS protection (input sanitization, CSP headers)
-  - CSRF protection tokens
-  - Rate limiting (per-endpoint throttling)
-  - Secure file upload validation
-  - Request size limits
-  
-- **Security Headers**
-  - Content Security Policy (CSP)
-  - HTTP Strict Transport Security (HSTS)
-  - X-Frame-Options, X-Content-Type-Options
-  - X-XSS-Protection
+**Professional Interview Preparation with Advanced AI Technology and Enterprise Security**
 
-### 📄 CV Analysis & Management
-- **Multi-Format Support**
-  - PDF, DOCX, DOC, TXT, ODT, TEX, HTML, RTF
-  - 10MB file size limit
-  - Secure file validation and storage
-  
-- **Intelligent Processing**
-  - AI-powered CV parsing
-  - Job description matching
-  - ATS score calculation
-  - Skills gap analysis
-  - Personalized recommendations
+<br />
+<div align="center">
+  <a href="https://github.com/Jobify-UtopiaHire/Jobify-UtopiaHire">
+     <img src="https://github.com/Jobify-UtopiaHire/Jobify-UtopiaHire/blob/main/frontend/src/assets/images/logo.png?raw=true" alt="Jobify Logo" width="144" height="144">
+  </a>
+  <h3>Jobify - UtopiaHire</h3>
+  <p align="center">
+    <strong>Professional interview preparation powered by advanced AI technology</strong>
+    <br />
+    <br />
+    <a href="https://github.com/Jobify-UtopiaHire/Jobify-UtopiaHire/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    ·
+    <a href="https://github.com/Jobify-UtopiaHire/Jobify-UtopiaHire/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+      </p>
+</div>
 
-### 🎤 Real-Time Voice Interviews
-- **LiveKit Integration**
-  - Real-time voice communication
-  - Video preview (optional)
-  - Natural AI conversation
-  - Low-latency audio processing
-  
-- **Interview Features**
-  - Personalized questions based on CV
-  - Adaptive difficulty
-  - Real-time feedback
-  - Performance scoring
-  - Email report delivery
+<br/>
 
-### 🤖 AI-Powered Coaching
-- **Google Gemini AI**
-  - Context-aware questioning
-  - Natural language understanding
-  - Behavioral assessment
-  - Technical skill evaluation
-  
-- **Personalization**
-  - Industry-specific questions
-  - Role-based scenarios
-  - Experience level adaptation
-  - Cultural fit assessment
+---
 
-### 📊 Performance Analytics
-- **Interview Tracking**
-  - Score history
-  - Performance trends
-  - Improvement metrics
-  - Session replays
-  
-- **Skills Assessment**
-  - Technical skills evaluation
-  - Soft skills analysis
-  - Communication effectiveness
-  - Areas for improvement
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#-features">Features</a></li>
+    <li><a href="#-security">Security</a></li>
+    <li><a href="#-architecture">Architecture</a></li>
+    <li><a href="#-getting-started">Getting Started</a></li>
+    <li><a href="#-installation">Installation</a></li>
+    <li><a href="#-configuration">Configuration</a></li>
+    <li><a href="#-usage">Usage</a></li>
+    <li><a href="#-api-documentation">API Documentation</a></li>
+    <li><a href="#-development">Development</a></li>
+    <li><a href="#-deployment">Deployment</a></li>
+    <li><a href="#-testing">Testing</a></li>
+    <li><a href="#-troubleshooting">Troubleshooting</a></li>
+    <li><a href="#-contributing">Contributing</a></li>
+    <li><a href="#-license">License</a></li>
+     <li><a href="#-contact">Contact</a></li>
+     <li><a href="#-acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-### 🎨 Modern User Experience
-- **Responsive Design**
-  - Dark theme interface
-  - Mobile-friendly layout
-  - Accessibility features
-  - Smooth animations
-  
-- **Internationalization**
-  - Multi-language support (EN, FR, AR)
-  - RTL language support
-  - Localized content
-  
-- **Interactive Elements**
-  - 3D shader backgrounds
-  - Drag-and-drop file upload
-  - Real-time validation
-  - Toast notifications
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
+
+---
+
+## About The Project
+
+**🚀 Jobify - UtopiaHire** is a comprehensive AI-powered interview coaching platform that combines intelligent CV parsing, real-time voice interaction, and enterprise-grade security to help job seekers excel in their interviews. The platform leverages cutting-edge technologies including Google Gemini AI for natural language processing, LiveKit for real-time communication, and FastAPI for high-performance backend services.
+
+Whether you're preparing for your first job interview or looking to sharpen your skills for executive positions, Jobify provides personalized, adaptive interview practice sessions with detailed performance analytics and actionable feedback delivered straight to your inbox.
+
+### 🎯 Key Features
+
+- 🔐 **Enterprise Security**: JWT authentication, OAuth 2.0, rate limiting, XSS/CSRF protection, and comprehensive security headers
+- 📄 **Smart CV Analysis**: Multi-format support (PDF, DOCX, TXT, etc.) with AI-powered parsing, ATS scoring, and skills gap analysis
+- 🎤 **Real-Time Voice Interviews**: LiveKit-powered voice communication with natural AI conversation and low-latency audio processing
+- 🤖 **AI-Powered Coaching**: Context-aware questioning using Google Gemini AI with adaptive difficulty and behavioral assessment
+- 📊 **Performance Analytics**: Comprehensive tracking with score history, improvement metrics, and detailed session reports
+- 🌐 **Multi-Language Support**: Built-in internationalization with support for English, French, and Arabic (including RTL)
+- 🎨 **Modern UI/UX**: Responsive dark theme design with 3D shader backgrounds, drag-and-drop uploads, and smooth animations
+
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
 
 ---
 
@@ -141,14 +106,43 @@ This application implements **enterprise-grade security** measures to protect yo
 - ✅ **Session Management** (token rotation)
 - ✅ **Audit Logging** (security events)
 
-📖 **[Read Full Security Documentation](SECURITY.md)**
+### Security Features
+
+**Authentication & Authorization:**
+- JWT-based secure sessions (2-hour access, 7-day refresh tokens)
+- OAuth 2.0 integration (Google & GitHub)
+- Email verification system with resend capability
+- Strong password requirements enforcement
+- Account lockout protection (5 attempts, 15-minute lockout)
+
+**Protection Layers:**
+- SQL injection prevention using parameterized queries
+- XSS protection with input sanitization and CSP headers
+- CSRF protection tokens for state-changing operations
+- Per-endpoint rate limiting and throttling
+- Secure file upload validation with magic number checks
+- Request size limits to prevent DoS attacks
+
+**Security Headers:**
+- Content Security Policy (CSP)
+- HTTP Strict Transport Security (HSTS)
+- X-Frame-Options, X-Content-Type-Options
+- X-XSS-Protection
+
+📖 **[Read Full Security Documentation](https://github.com/Jobify-UtopiaHire/Jobify-UtopiaHire/blob/main/SECURITY.md)**
+
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
 
 ---
 
 ## 🏗️ Architecture
 
 ```
-UtopiaHire Platform
+Jobify Platform
 │
 ├── Frontend (React + TypeScript)
 │   ├── Vite Build System
@@ -156,16 +150,16 @@ UtopiaHire Platform
 │   ├── LiveKit Components
 │   ├── Tailwind CSS
 │   ├── Security Utilities
-│   └── i18n Support
+│   └── i18n Support (EN, FR, AR)
 │
 ├── Backend (Python + FastAPI)
-│   ├── Authentication API
-│   ├── OAuth Integration
+│   ├── Authentication API (JWT + OAuth)
 │   ├── File Upload Service
 │   ├── LiveKit Token Service
 │   ├── Interview Agent
 │   ├── CV Analysis Engine
 │   ├── Skills Gap Analysis
+│   ├── Email Service
 │   └── Security Middleware
 │
 └── Database (PostgreSQL)
@@ -177,44 +171,52 @@ UtopiaHire Platform
 ### Technology Stack
 
 #### Backend
-- **Python 3.13+**
-- **FastAPI** - High-performance async API
-- **SQLAlchemy** - ORM with asyncpg
+- **Python 3.13+** - Modern Python runtime
+- **FastAPI** - High-performance async API framework
+- **SQLAlchemy** - Async ORM with asyncpg driver
 - **PostgreSQL** - Relational database
-- **LiveKit** - Real-time communication
-- **Google Gemini AI** - Natural language processing
+- **LiveKit** - Real-time communication infrastructure
+- **Google Gemini AI** - Advanced language models
 - **Security**: SlowAPI, bleach, bcrypt, python-jose
 
 #### Frontend
-- **React 18** with **TypeScript**
-- **Vite** - Fast build tool
+- **React 18** with **TypeScript** - Type-safe UI development
+- **Vite** - Lightning-fast build tool
 - **React Router v6** - Client-side routing
-- **LiveKit Components React** - Voice/video UI
-- **Tailwind CSS** - Utility-first styling
-- **Framer Motion** - Animations
-- **Axios** - HTTP client with interceptors
-- **i18next** - Internationalization
+- **LiveKit Components React** - Pre-built voice/video UI
+- **Tailwind CSS** - Utility-first styling framework
+- **Framer Motion** - Production-ready animations
+- **Axios** - HTTP client with request/response interceptors
+- **i18next** - Internationalization framework
 
 #### Infrastructure
 - **Docker Compose** - Container orchestration
 - **PostgreSQL 15** - Database container
-- **pgAdmin 4** - Database management UI
+- **pgAdmin 4** - Web-based database management
+
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
 
 ---
 
-## 📋 Prerequisites
+## ⚡ Getting Started
 
-Before you begin, ensure you have the following installed:
+### Prerequisites
 
-- **Python 3.13+** ([Download](https://www.python.org/downloads/))
-- **Node.js 18+** ([Download](https://nodejs.org/))
+Before you begin, ensure you have the following installed on your system:
+
+- **Python 3.11+** ([Download](https://www.python.org/downloads/))
+- **Node.js 18+** with npm ([Download](https://nodejs.org/))
 - **Docker & Docker Compose** ([Download](https://www.docker.com/))
 - **Git** ([Download](https://git-scm.com/))
-- **MiKTeX**([Download](https://miktex.org/download/))(it should be updated)
+- **MiKTeX** ([Download](https://miktex.org/download/)) - Required for LaTeX CV processing (keep it updated)
 
 ### API Keys & Accounts
 
-You'll need accounts and API keys for:
+You'll need to register for the following services and obtain API credentials:
 
 1. **LiveKit** ([Sign up](https://cloud.livekit.io/))
    - WebSocket URL
@@ -222,36 +224,45 @@ You'll need accounts and API keys for:
    - API Secret
 
 2. **Google Gemini AI** ([Get API Key](https://ai.google.dev/))
-   - API Key
+   - API Key for natural language processing
 
-3. **OAuth (Optional)**
+3. **OAuth Providers (Optional)**
    - Google OAuth ([Console](https://console.cloud.google.com/))
-   - GitHub OAuth ([Settings](https://github.com/settings/developers))
+   - GitHub OAuth ([Developer Settings](https://github.com/settings/developers))
 
-4. **Email (Optional)**
+4. **Email Service (Optional)**
    - SMTP server credentials (e.g., Gmail App Password)
+
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
 
 ---
 
-## 🚀 Installation
+## 📚 Installation
 
-### 1. Clone the Repository
+### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/anas-dev0/cs-challange.git
-cd cs-challange
+# Clone the repository
+git clone https://github.com/Jobify-UtopiaHire/Jobify-UtopiaHire.git
+
+# Navigate to the project directory
+cd Jobify-UtopiaHire
 ```
 
-### 2. Database Setup (Docker)
+### Step 2: Database Setup (Docker)
 
 ```bash
-# Copy environment template
+# Copy the Docker environment template
 cp .env.docker.example .env
 
-# Edit .env and change default passwords
-nano .env
+# Edit the .env file and change default passwords
+nano .env  # or use your preferred text editor
 
-# Start PostgreSQL and pgAdmin
+# Start PostgreSQL and pgAdmin containers
 docker-compose up -d
 
 # Verify containers are running
@@ -262,117 +273,124 @@ docker-compose ps
 - PostgreSQL: `localhost:5432`
 - pgAdmin: `http://localhost:5050`
 
-### 3. Backend Setup
+### Step 3: Backend Setup
 
 ```bash
+# Navigate to backend directory
 cd backend
 
-# Create virtual environment
+# Create a Python virtual environment
 python -m venv venv
 
-# Activate virtual environment
+# Activate the virtual environment
 # On Windows:
 venv\Scripts\activate
 # On macOS/Linux:
 source venv/bin/activate
 
-# Install dependencies
+# Install Python dependencies
 pip install -r requirements.txt
 
-# Copy environment template
+# Copy backend environment template
 cp .env.example .env
 
-# Edit .env and configure your settings
+# Generate secure secrets
+python -c "import secrets; print('JWT_SECRET=' + secrets.token_urlsafe(32))"
+python -c "import secrets; print('REFRESH_SECRET=' + secrets.token_urlsafe(32))"
+
+# Edit .env and configure your settings (see Configuration section)
 nano .env
 ```
 
-**Required Environment Variables:**
-```bash
-# Generate strong secrets
-python -c "import secrets; print(secrets.token_urlsafe(32))"
-
-# Add to .env:
-JWT_SECRET=<generated-secret>
-REFRESH_SECRET=<generated-secret>
-DATABASE_URL=postgresql+asyncpg://postgres:your-password@localhost:5432/utopiahire
-GOOGLE_API_KEY=<your-gemini-api-key>
-LIVEKIT_API_KEY=<your-livekit-key>
-LIVEKIT_API_SECRET=<your-livekit-secret>
-LIVEKIT_URL=wss://your-project.livekit.cloud
-```
-
-### 4. Frontend Setup
+### Step 4: Frontend Setup
 
 ```bash
-cd ../frontend
+# Navigate to frontend directory (from project root)
+cd frontend
 
-# Install dependencies
+# Install Node.js dependencies
 npm install
 
-# Create .env file (optional)
+# Create frontend environment file (optional)
 echo "VITE_API_URL=http://localhost:8000" > .env
 ```
 
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
+
 ---
 
-## ⚙️ Configuration
+## 🪛 Configuration
 
-### Security Configuration
+### Backend Environment Variables
 
-1. **Change Default Passwords**
-   ```bash
-   # In .env (root directory for Docker)
-   POSTGRES_PASSWORD=<strong-password>
-   PGADMIN_PASSWORD=<strong-password>
-   
-   # In backend/.env
-   JWT_SECRET=<32+ character random string>
-   REFRESH_SECRET=<32+ character random string>
-   SESSION_SECRET=<32+ character random string>
-   ```
+Edit `backend/.env` with the following required configurations:
 
-2. **Configure CORS Origins**
-   ```bash
-   # backend/.env
-   CORS_ORIGINS=http://localhost:5173,http://localhost:3000
-   ```
+```env
+# Security Secrets (Generate using: python -c "import secrets; print(secrets.token_urlsafe(32))")
+JWT_SECRET=your_jwt_secret_here_32plus_chars
+REFRESH_SECRET=your_refresh_secret_here_32plus_chars
+SESSION_SECRET=your_session_secret_here_32plus_chars
 
-3. **Email Configuration (Optional)**
-   ```bash
-   # backend/.env
-   SMTP_SERVER=smtp.gmail.com
-   SMTP_PORT=587
-   SENDER_EMAIL=your-email@gmail.com
-   SENDER_PASSWORD=your-app-password
-   ```
+# Database Configuration
+DATABASE_URL=postgresql+asyncpg://postgres:your_password@localhost:5432/utopiahire
 
-4. **OAuth Setup (Optional)**
-   - Configure Google OAuth in [Google Console](https://console.cloud.google.com/)
-   - Configure GitHub OAuth in [GitHub Settings](https://github.com/settings/developers)
-   - Add credentials to `backend/.env`
+# AI Services
+GOOGLE_API_KEY=your_gemini_api_key_here
 
-### Production Configuration
+# LiveKit Configuration
+LIVEKIT_API_KEY=your_livekit_api_key
+LIVEKIT_API_SECRET=your_livekit_api_secret
+LIVEKIT_URL=wss://your-project.livekit.cloud
 
-For production deployment:
+# CORS & Frontend
+CORS_ORIGINS=http://localhost:5173,http://localhost:3000
+FRONTEND_URL=http://localhost:5173
 
-1. **Enable HTTPS**
-   ```python
-   # backend/app/main.py
-   # Set secure=True for session cookies
-   ```
+# Email Configuration (Optional)
+SMTP_SERVER=smtp.gmail.com
+SMTP_PORT=587
+SENDER_EMAIL=your-email@gmail.com
+SENDER_PASSWORD=your_gmail_app_password
 
-2. **Update CSP Headers**
-   ```python
-   # Add your production domain to CSP
-   ```
+# OAuth Configuration (Optional)
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+GITHUB_CLIENT_ID=your_github_client_id
+GITHUB_CLIENT_SECRET=your_github_client_secret
+```
 
-3. **Database SSL**
-   ```bash
-   DATABASE_URL=postgresql+asyncpg://user:pass@host:5432/db?ssl=require
-   ```
+### Docker Environment Variables
 
-4. **Rate Limiting**
-   - Review and adjust rate limits in `security_middleware.py`
+Edit `.env` (root directory) for Docker Compose:
+
+```env
+# PostgreSQL Configuration
+POSTGRES_DB=utopiahire
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=your_strong_password_here
+
+# pgAdmin Configuration
+PGADMIN_DEFAULT_EMAIL=admin@utopiahire.com
+PGADMIN_DEFAULT_PASSWORD=your_admin_password_here
+```
+
+### Security Best Practices
+
+1. **Generate Strong Secrets**: Use cryptographically secure random strings (32+ characters)
+2. **Never Commit Secrets**: Keep `.env` files out of version control
+3. **Change Default Passwords**: Replace all example passwords with strong, unique values
+4. **Use App Passwords**: For Gmail, generate an app-specific password instead of using your account password
+5. **Restrict CORS**: Only allow trusted origins in production
+
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
 
 ---
 
@@ -380,102 +398,141 @@ For production deployment:
 
 ### Starting the Application
 
+You'll need **four separate terminal windows** to run all services:
 
 ```bash
-# Terminal 1: Start database
+# Terminal 1: Start PostgreSQL and pgAdmin
 docker-compose up
 
-# Terminal 2: Start backend
+# Terminal 2: Start Backend API
 cd backend
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 python -m app.main
 
-# Terminal 3 : Start Agent
+# Terminal 3: Start Interview Agent
 cd backend
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 cd agent
 python agent.py dev
 
-# Terminal 4: Start frontend
+# Terminal 4: Start Frontend Development Server
 cd frontend
 npm run dev
 ```
 
+### Access Points
 
-### Accessing the Application
-
-- **Frontend**: http://localhost:5173
+- **Frontend Application**: http://localhost:5173
 - **Backend API**: http://localhost:8000
-- **API Docs**: http://localhost:8000/docs
+- **API Documentation**: http://localhost:8000/docs (Interactive Swagger UI)
 - **Health Check**: http://localhost:8000/health
-- **pgAdmin**: http://localhost:5050
+- **pgAdmin**: http://localhost:5050 (Database management)
 
 ### Using the Platform
 
-#### 1. Create Account
-- Navigate to http://localhost:5173
+#### 1. Create Your Account
+```bash
+# Navigate to the application
+Open http://localhost:5173 in your browser
+
+# Register a new account
 - Click "Sign Up"
-- Enter name, email, and strong password
-- Verify email (check inbox)
+- Enter your name, email, and a strong password
+- Verify your email address (check your inbox)
+```
 
-#### 2. Upload CV
-- Log in to your account
-- Go to "Interview Setup"
-- Upload your CV (PDF, DOCX, etc.)
-- Enter job description
-- Provide interview details
+#### 2. Upload Your CV
+```bash
+# Log in to your account
+# Navigate to "Interview Setup" page
 
-#### 3. Start Interview
+# Upload your CV
+- Drag and drop your CV file, or click to browse
+- Supported formats: PDF, DOCX, DOC, TXT, ODT, TEX, HTML, RTF
+- Maximum file size: 10MB
+
+# Provide interview context
+- Enter the job description
+- Add any specific requirements or focus areas
+```
+
+#### 3. Start Your Interview
+```bash
+# Begin the interview session
 - Click "Start Interview"
-- Grant microphone access
-- Answer AI interviewer's questions
-- Toggle camera/mic as needed
-- End call when complete
+- Grant microphone access when prompted
+- (Optional) Enable camera for video preview
 
-#### 4. Review Results
-- Check email for detailed report
-- View score and feedback
-- Track progress in dashboard
+# During the interview
+- Answer the AI interviewer's questions naturally
+- Toggle microphone/camera as needed
+- The AI adapts questions based on your CV and responses
+
+# End the session
+- Click "End Call" when you're ready to finish
+```
+
+#### 4. Review Your Performance
+```bash
+# Check your results
+- Detailed report sent to your email within minutes
+- View your interview score and feedback
+- Access performance analytics in your dashboard
+- Track progress over multiple sessions
+```
+
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
 
 ---
 
-## 📚 API Documentation
+## 📖 API Documentation
 
 ### Authentication Endpoints
 
-```bash
-POST /api/auth/register
-POST /api/auth/login
-POST /api/auth/verify-email
-POST /api/auth/resend-verification
-POST /api/auth/refresh
-GET  /api/auth/me
-```
+| Method | Endpoint | Description | Authentication |
+|--------|----------|-------------|----------------|
+| POST | `/api/auth/register` | Create new user account | None |
+| POST | `/api/auth/login` | Authenticate user | None |
+| POST | `/api/auth/verify-email` | Verify email address | None |
+| POST | `/api/auth/resend-verification` | Resend verification email | None |
+| POST | `/api/auth/refresh` | Refresh access token | Refresh Token |
+| GET | `/api/auth/me` | Get current user info | JWT Required |
 
 ### Service Endpoints
 
-```bash
-POST /api/upload-cv            # JWT required
-POST /api/start-session        # JWT required
-POST /api/save-interview       # JWT required
-```
+| Method | Endpoint | Description | Authentication |
+|--------|----------|-------------|----------------|
+| POST | `/api/upload-cv` | Upload and parse CV | JWT Required |
+| POST | `/api/start-session` | Start interview session | JWT Required |
+| POST | `/api/save-interview` | Save interview results | JWT Required |
 
 ### OAuth Endpoints
 
-```bash
-GET  /api/auth/oauth/google
-GET  /api/auth/oauth/google/callback
-GET  /api/auth/oauth/github
-GET  /api/auth/oauth/github/callback
-```
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/auth/oauth/google` | Initiate Google OAuth |
+| GET | `/api/auth/oauth/google/callback` | Google OAuth callback |
+| GET | `/api/auth/oauth/github` | Initiate GitHub OAuth |
+| GET | `/api/auth/oauth/github/callback` | GitHub OAuth callback |
 
-### Interactive API Documentation
+### Interactive Documentation
 
-Visit http://localhost:8000/docs for:
-- Complete API reference
-- Try-it-out functionality
-- Request/response schemas
-- Authentication testing
+Visit **http://localhost:8000/docs** for:
+- Complete API reference with request/response schemas
+- Interactive "Try it out" functionality
+- Authentication testing interface
+- Example requests and responses
+- Model schemas and validation rules
+
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
 
 ---
 
@@ -484,80 +541,98 @@ Visit http://localhost:8000/docs for:
 ### Project Structure
 
 ```
-cs-challange/
+Jobify-UtopiaHire/
 ├── backend/
 │   ├── app/
-│   │   ├── main.py              # FastAPI application
-│   │   ├── auth_routes.py       # Authentication endpoints
-│   │   ├── security.py          # JWT utilities
-│   │   ├── security_middleware.py  # Security layers
-│   │   ├── models.py            # Database models
-│   │   ├── schemas.py           # Pydantic schemas
-│   │   └── config.py            # Configuration
+│   │   ├── main.py                    # FastAPI application entry point
+│   │   ├── auth_routes.py             # Authentication endpoints
+│   │   ├── security.py                # JWT utilities and password hashing
+│   │   ├── security_middleware.py     # Security layers and rate limiting
+│   │   ├── models.py                  # SQLAlchemy database models
+│   │   ├── schemas.py                 # Pydantic validation schemas
+│   │   └── config.py                  # Application configuration
 │   ├── agent/
-│   │   ├── agent.py             # LiveKit interview agent
-│   │   ├── cv_parser.py         # CV text extraction
-│   │   └── mailer.py            # Email service
-│   └── core/
-│       ├── ai_analyzer.py       # Gemini AI integration
-│       └── skill_extractor.py   # Skills analysis
+│   │   ├── agent.py                   # LiveKit interview agent
+│   │   ├── cv_parser.py               # CV text extraction utilities
+│   │   └── mailer.py                  # Email service integration
+│   ├── core/
+│   │   ├── ai_analyzer.py             # Gemini AI integration
+│   │   └── skill_extractor.py         # Skills analysis engine
+│   ├── requirements.txt               # Python dependencies
+│   └── .env.example                   # Environment variables template
 │
 ├── frontend/
 │   ├── src/
-│   │   ├── App.tsx              # Main application
-│   │   ├── api.ts               # API client
-│   │   ├── components/          # React components
-│   │   ├── pages/               # Page components
-│   │   ├── utils/               # Utilities
-│   │   │   └── security.ts      # Security functions
-│   │   └── locales/             # Translations
-│   └── public/                  # Static assets
+│   │   ├── App.tsx                    # Main React application
+│   │   ├── api.ts                     # Axios API client
+│   │   ├── components/                # Reusable React components
+│   │   ├── pages/                     # Page-level components
+│   │   ├── utils/
+│   │   │   └── security.ts            # Frontend security utilities
+│   │   └── locales/                   # i18n translation files
+│   │       ├── en.json
+│   │       ├── fr.json
+│   │       └── ar.json
+│   ├── public/                        # Static assets
+│   ├── package.json                   # Node.js dependencies
+│   └── vite.config.ts                 # Vite configuration
 │
-├── docker-compose.yml           # Database containers
-├── SECURITY.md                  # Security documentation
-└── README.md                    # This file
+├── docker-compose.yml                 # Database container orchestration
+├── .env.docker.example                # Docker environment template
+├── SECURITY.md                        # Security documentation
+├── LICENSE                            # MIT License
+└── README.md                          # This file
 ```
 
 ### Development Workflow
 
 1. **Create Feature Branch**
    ```bash
-   git checkout -b feature/your-feature
+   git checkout -b feature/your-feature-name
    ```
 
-2. **Make Changes**
-   - Follow existing code style
-   - Add comments for complex logic
-   - Update tests if applicable
+2. **Make Your Changes**
+   - Follow existing code style and conventions
+   - Add clear comments for complex logic
+   - Update documentation if needed
+   - Write tests for new features
 
 3. **Test Locally**
    ```bash
-   # Backend
+   # Backend tests
    cd backend
    python -m pytest
    
-   # Frontend
+   # Frontend linting and build
    cd frontend
    npm run lint
    npm run build
    ```
 
-4. **Commit Changes**
+4. **Commit Your Changes**
    ```bash
    git add .
-   git commit -m "feat: your feature description"
+   git commit -m "feat: add your feature description"
    ```
 
-5. **Push and Create PR**
+5. **Push and Create Pull Request**
    ```bash
-   git push origin feature/your-feature
+   git push origin feature/your-feature-name
+   # Then create a PR on GitHub
    ```
 
-### Code Style
+### Code Style Guidelines
 
-- **Python**: Follow PEP 8
-- **TypeScript**: Follow Airbnb style guide
-- **Commits**: Use conventional commits
+- **Python**: Follow PEP 8 style guide
+- **TypeScript/React**: Follow Airbnb JavaScript/React style guide
+- **Commits**: Use conventional commits format (feat:, fix:, docs:, etc.)
+- **Comments**: Write clear, concise comments explaining the "why", not the "what"
+
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
 
 ---
 
@@ -565,56 +640,90 @@ cs-challange/
 
 ### Production Checklist
 
-- [ ] Change all default passwords
-- [ ] Generate strong secrets (32+ characters)
-- [ ] Configure HTTPS/SSL
-- [ ] Update CORS origins
-- [ ] Enable secure cookies
-- [ ] Configure database SSL
-- [ ] Set up database backups
-- [ ] Configure monitoring
-- [ ] Set up logging aggregation
-- [ ] Review rate limits
-- [ ] Test OAuth callbacks
-- [ ] Set up CDN (optional)
-- [ ] Configure firewall rules
+Security Configuration:
+- [ ] Change all default passwords to strong, unique values
+- [ ] Generate cryptographically secure secrets (32+ characters)
+- [ ] Configure HTTPS/SSL certificates
+- [ ] Update CORS origins to production domains only
+- [ ] Enable secure cookies (secure=True, httponly=True)
+- [ ] Configure database SSL/TLS connections
+
+Infrastructure:
+- [ ] Set up database backups and recovery procedures
+- [ ] Configure monitoring and alerting (e.g., Sentry, DataDog)
+- [ ] Set up centralized logging (e.g., ELK stack, CloudWatch)
+- [ ] Configure CDN for static assets (optional)
+- [ ] Set up firewall rules and network security groups
+
+Application:
+- [ ] Review and adjust rate limits for production traffic
+- [ ] Test OAuth callbacks with production URLs
+- [ ] Verify email service configuration
+- [ ] Set up health check endpoints
+- [ ] Configure proper error handling and logging
 
 ### Deployment Options
 
-#### Docker Compose (Simple)
+#### Using Docker Compose (Simple)
 
 ```bash
-# Build and start all services
+# Build and start all services in production mode
 docker-compose -f docker-compose.prod.yml up -d
+
+# View logs
+docker-compose logs -f
+
+# Stop services
+docker-compose down
 ```
 
-#### Cloud Platforms
+#### Cloud Platform Deployments
 
-- **Backend**: Heroku, AWS, DigitalOcean, Railway
-- **Frontend**: Vercel, Netlify, AWS S3 + CloudFront
-- **Database**: AWS RDS, DigitalOcean Managed DB
+**Backend Options:**
+- Heroku (easy deployment with CLI)
+- AWS Elastic Beanstalk or ECS
+- DigitalOcean App Platform
+- Railway (modern PaaS)
+- Google Cloud Run
 
-### Environment Variables
+**Frontend Options:**
+- Vercel (recommended for Vite/React)
+- Netlify
+- AWS S3 + CloudFront
+- DigitalOcean Static Sites
 
-Set the following in production:
+**Database Options:**
+- AWS RDS PostgreSQL
+- DigitalOcean Managed Database
+- Heroku Postgres
+- Google Cloud SQL
 
-```bash
-# Backend
-JWT_SECRET=<production-secret>
-REFRESH_SECRET=<production-secret>
-DATABASE_URL=<production-db-url>
-CORS_ORIGINS=https://your-domain.com
-FRONTEND_URL=https://your-domain.com
+### Production Environment Variables
 
-# Frontend
-VITE_API_URL=https://api.your-domain.com
+```env
+# Backend (.env)
+JWT_SECRET=<production-secure-secret-32plus-chars>
+REFRESH_SECRET=<production-secure-secret-32plus-chars>
+DATABASE_URL=postgresql+asyncpg://user:pass@prod-host:5432/db?ssl=require
+CORS_ORIGINS=https://yourdomain.com
+FRONTEND_URL=https://yourdomain.com
+LIVEKIT_URL=wss://your-production.livekit.cloud
+
+# Frontend (.env.production)
+VITE_API_URL=https://api.yourdomain.com
 ```
+
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
 
 ---
 
 ## 🧪 Testing
 
-### Backend Tests
+### Backend Testing
 
 ```bash
 cd backend
@@ -622,132 +731,329 @@ cd backend
 # Run all tests
 python -m pytest
 
-# Run with coverage
-python -m pytest --cov=app
+# Run tests with coverage report
+python -m pytest --cov=app --cov-report=html
 
-# Run specific test
+# Run specific test file
 python -m pytest tests/test_auth.py
+
+# Run tests with verbose output
+python -m pytest -v
 ```
 
-### Frontend Tests
+### Frontend Testing
 
 ```bash
 cd frontend
 
-# Lint
+# Lint TypeScript/React code
 npm run lint
 
-# Build test
-npm run build
+# Fix linting issues automatically
+npm run lint:fix
 
-# Type check
-npm run tsc --noEmit
+# Type checking
+npx tsc --noEmit
+
+# Build test (ensures no build errors)
+npm run build
 ```
 
 ### Security Testing
 
 ```bash
-# Install OWASP ZAP
-# Run security scan against localhost:8000
+# Test rate limiting (should block after limit)
+for i in {1..20}; do curl -X POST http://localhost:8000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"test@test.com","password":"test"}'; done
 
-# Test rate limiting
-for i in {1..20}; do curl http://localhost:8000/api/auth/login; done
+# Test file upload security
+curl -X POST -F "cv=@test.pdf" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  http://localhost:8000/api/upload-cv
 
-# Test file upload
-curl -X POST -F "cv=@malicious.pdf" http://localhost:8000/api/upload-cv
+# OWASP ZAP Security Scan
+# 1. Install OWASP ZAP
+# 2. Run automated scan against http://localhost:8000
+# 3. Review security vulnerabilities report
 ```
+
+### Manual Testing Checklist
+
+- [ ] User registration and email verification
+- [ ] Login with email/password
+- [ ] OAuth login (Google and GitHub)
+- [ ] CV upload and parsing
+- [ ] Interview session creation
+- [ ] Real-time voice communication
+- [ ] Performance analytics display
+- [ ] Email report delivery
+- [ ] Rate limiting behavior
+- [ ] Error handling and user feedback
+
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
 
 ---
 
 ## 🔧 Troubleshooting
 
-### Common Issues
-
-#### Database Connection Failed
+### Database Connection Failed
 
 ```bash
-# Check if PostgreSQL is running
+# Check if PostgreSQL container is running
 docker-compose ps
 
-# Check logs
+# View database logs
 docker-compose logs db
 
-# Restart database
+# Restart database service
 docker-compose restart db
+
+# Verify connection settings in backend/.env
+DATABASE_URL=postgresql+asyncpg://postgres:your_password@localhost:5432/utopiahire
 ```
 
-#### LiveKit Connection Error
+### LiveKit Connection Error
 
 ```bash
-# Verify credentials in backend/.env
+# Verify LiveKit credentials in backend/.env
 LIVEKIT_API_KEY=your_key
 LIVEKIT_API_SECRET=your_secret
 LIVEKIT_URL=wss://your-project.livekit.cloud
 
-# Check LiveKit dashboard for active rooms
+# Check LiveKit dashboard
+# - Visit cloud.livekit.io
+# - Check active rooms and connection status
+# - Verify API key permissions
+
+# Test token generation
+cd backend
+python -c "from app.config import settings; print(settings.LIVEKIT_API_KEY)"
 ```
 
-#### Frontend Can't Reach Backend
+### Frontend Cannot Reach Backend
 
 ```bash
 # Verify backend is running
 curl http://localhost:8000/health
+# Should return: {"status": "healthy"}
 
-# Check CORS configuration
-# backend/.env: CORS_ORIGINS=http://localhost:5173
+# Check CORS configuration in backend/.env
+CORS_ORIGINS=http://localhost:5173
+
+# Check frontend API URL in frontend/.env
+VITE_API_URL=http://localhost:8000
+
+# View browser console for CORS errors
+# Open Developer Tools > Console in your browser
 ```
 
-#### Email Verification Not Working
+### Email Verification Not Working
 
 ```bash
-# Check SMTP settings in backend/.env
+# Check SMTP configuration in backend/.env
 SMTP_SERVER=smtp.gmail.com
+SMTP_PORT=587
 SENDER_EMAIL=your-email@gmail.com
-SENDER_PASSWORD=<app-password>  # Not your regular password!
+SENDER_PASSWORD=<app-password>  # NOT your regular Gmail password!
+
+# Generate Gmail App Password:
+# 1. Go to Google Account > Security
+# 2. Enable 2-Step Verification
+# 3. Go to App Passwords
+# 4. Generate password for "Mail"
+# 5. Use generated password in SENDER_PASSWORD
 
 # Check backend logs for email errors
+docker-compose logs backend | grep -i email
 ```
 
-#### Rate Limit Errors
+### Rate Limit Errors (HTTP 429)
 
 ```bash
-# Wait for rate limit window to reset (usually 1 minute)
+# Wait for rate limit window to reset (typically 60 seconds)
+
 # Or adjust limits in backend/app/security_middleware.py
+RATE_LIMITS = {
+    "/api/auth/login": "5 per minute",  # Modify as needed
+    "/api/auth/register": "3 per minute"
+}
+
+# Restart backend after changes
 ```
 
-### Getting Help
+### Agent Not Starting
 
-1. **Check Logs**
+```bash
+# Ensure all dependencies are installed
+cd backend
+pip install -r requirements.txt
+
+# Check if LiveKit agent dependencies are available
+python -c "import livekit; print(livekit.__version__)"
+
+# Run agent with verbose logging
+cd agent
+python agent.py dev --verbose
+```
+
+### Getting More Help
+
+1. **Check Application Logs**
    ```bash
    # Backend logs
-   docker-compose logs backend
+   docker-compose logs backend -f
    
    # Database logs
-   docker-compose logs db
+   docker-compose logs db -f
+   
+   # All services
+   docker-compose logs -f
    ```
 
-2. **GitHub Issues**: [Create an issue](https://github.com/anas-dev0/cs-challange/issues)
+2. **Search Existing Issues**: [GitHub Issues](https://github.com/Jobify-UtopiaHire/Jobify-UtopiaHire/issues)
 
-3. **Documentation**: Read [SECURITY.md](SECURITY.md) for security-related issues
+3. **Create New Issue**: [Report Bug](https://github.com/Jobify-UtopiaHire/Jobify-UtopiaHire/issues/new)
+
+4. **Review Documentation**: [SECURITY.md](https://github.com/Jobify-UtopiaHire/Jobify-UtopiaHire/blob/main/SECURITY.md) for security-related issues
+
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
 
 ---
 
+## 🤝 Contributing
 
+Contributions are what make the open source community amazing! Any contributions are **greatly appreciated**.
 
+### How to Contribute
 
+1. **Fork the Project**
+   ```bash
+   # Click the "Fork" button on GitHub
+   # Clone your fork
+   git clone https://github.com/YOUR_USERNAME/Jobify-UtopiaHire.git
+   ```
+
+2. **Create your Feature Branch**
+   ```bash
+   git checkout -b feature/AmazingFeature
+   ```
+
+3. **Make Your Changes**
+   - Write clean, documented code
+   - Follow the existing code style
+   - Add tests if applicable
+   - Update documentation as needed
+
+4. **Commit your Changes**
+   ```bash
+   git commit -m 'feat: Add some AmazingFeature'
+   ```
+   Use conventional commit format:
+   - `feat:` - New features
+   - `fix:` - Bug fixes
+   - `docs:` - Documentation changes
+   - `style:` - Code style changes
+   - `refactor:` - Code refactoring
+   - `test:` - Test additions or changes
+   - `chore:` - Maintenance tasks
+
+5. **Push to the Branch**
+   ```bash
+   git push origin feature/AmazingFeature
+   ```
+
+6. **Open a Pull Request**
+   - Go to the original repository
+   - Click "New Pull Request"
+   - Select your feature branch
+   - Describe your changes clearly
+   - Link any related issues
+
+### Contribution Guidelines
+
+- **Code Quality**: Ensure your code passes linting and tests
+- **Documentation**: Update README and comments as needed
+- **Security**: Never commit secrets, API keys, or sensitive data
+- **Testing**: Add tests for new features
+- **Respect**: Be kind and professional in all interactions
+
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
+
+---
+
+## 📃 License
+
+Distributed under the MIT License. See `LICENSE` file for more information.
+
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
+
+---
 
 ## 🙏 Acknowledgments
 
-- **LiveKit Team** - Real-time communication platform
-- **Google AI** - Gemini language models
-- **FastAPI** - Modern Python web framework
-- **React Team** - Frontend library
-- **Open Source Community** - Various libraries and tools
+This project was made possible thanks to these amazing technologies and communities:
 
+- **[LiveKit Team](https://livekit.io/)** - Real-time communication platform that powers our voice interviews
+- **[Google AI](https://ai.google.dev/)** - Gemini language models for intelligent conversation
+- **[FastAPI](https://fastapi.tiangolo.com/)** - Modern, fast web framework for building APIs
+- **[React Team](https://react.dev/)** - The library that powers our frontend
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[PostgreSQL](https://www.postgresql.org/)** - Robust and reliable database system
+- **[Docker](https://www.docker.com/)** - Containerization platform
+- **[Vite](https://vitejs.dev/)** - Next generation frontend tooling
+- **Open Source Community** - All the amazing libraries and tools that make development easier
 
+Special thanks to all contributors and users who help improve this platform!
+
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
+
+---
 
 <div align="center">
 
 **Built with ❤️ for better interview preparation**
 
+*Empowering job seekers with AI-powered practice and feedback*
+
+[![GitHub stars](https://img.shields.io/github/stars/Jobify-UtopiaHire/Jobify-UtopiaHire?style=social)](https://github.com/Jobify-UtopiaHire/Jobify-UtopiaHire/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Jobify-UtopiaHire/Jobify-UtopiaHire?style=social)](https://github.com/Jobify-UtopiaHire/Jobify-UtopiaHire/network/members)
+
 </div>
+
+---
+
+[contributors-shield]: https://img.shields.io/github/contributors/Jobify-UtopiaHire/Jobify-UtopiaHire.svg?style=for-the-badge
+[contributors-url]: https://github.com/Jobify-UtopiaHire/Jobify-UtopiaHire/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Jobify-UtopiaHire/Jobify-UtopiaHire.svg?style=for-the-badge
+[forks-url]: https://github.com/Jobify-UtopiaHire/Jobify-UtopiaHire/network/members
+[stars-shield]: https://img.shields.io/github/stars/Jobify-UtopiaHire/Jobify-UtopiaHire.svg?style=for-the-badge
+[security-shield]: https://img.shields.io/badge/Security-Enterprise%20Grade-green?style=for-the-badge
+[stars-url]: https://github.com/Jobify-UtopiaHire/Jobify-UtopiaHire/stargazers
+[python-shield]: https://img.shields.io/badge/Python-3.13%2B-blue?style=for-the-badge&logo=python&logoColor=white
+[react-shield]: https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react&logoColor=white
+[issues-shield]: https://img.shields.io/github/issues/Jobify-UtopiaHire/Jobify-UtopiaHire.svg?style=for-the-badge
+[issues-url]: https://github.com/Jobify-UtopiaHire/Jobify-UtopiaHire/issues
+[license-shield]: https://img.shields.io/github/license/Jobify-UtopiaHire/Jobify-UtopiaHire.svg?style=for-the-badge
+[license-url]: https://github.com/Jobify-UtopiaHire/Jobify-UtopiaHire/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555

@@ -132,6 +132,7 @@ This application implements **enterprise-grade security** measures to protect yo
 ### Security Features
 
 **Authentication & Authorization:**
+
 - JWT-based secure sessions (2-hour access, 7-day refresh tokens)
 - OAuth 2.0 integration (Google & GitHub)
 - Email verification system with resend capability
@@ -139,6 +140,7 @@ This application implements **enterprise-grade security** measures to protect yo
 - Account lockout protection (5 attempts, 15-minute lockout)
 
 **Protection Layers:**
+
 - SQL injection prevention using parameterized queries
 - XSS protection with input sanitization and CSP headers
 - CSRF protection tokens for state-changing operations
@@ -147,6 +149,7 @@ This application implements **enterprise-grade security** measures to protect yo
 - Request size limits to prevent DoS attacks
 
 **Security Headers:**
+
 - Content Security Policy (CSP)
 - HTTP Strict Transport Security (HSTS)
 - X-Frame-Options, X-Content-Type-Options
@@ -194,6 +197,7 @@ Jobify Platform
 ### Technology Stack
 
 #### Backend
+
 - **Python 3.13+** - Modern Python runtime
 - **FastAPI** - High-performance async API framework
 - **SQLAlchemy** - Async ORM with asyncpg driver
@@ -203,6 +207,7 @@ Jobify Platform
 - **Security**: SlowAPI, bleach, bcrypt, python-jose
 
 #### Frontend
+
 - **React 18** with **TypeScript** - Type-safe UI development
 - **Vite** - Lightning-fast build tool
 - **React Router v6** - Client-side routing
@@ -213,6 +218,7 @@ Jobify Platform
 - **i18next** - Internationalization framework
 
 #### Infrastructure
+
 - **Docker Compose** - Container orchestration
 - **PostgreSQL 15** - Database container
 - **pgAdmin 4** - Web-based database management
@@ -242,14 +248,17 @@ Before you begin, ensure you have the following installed on your system:
 You'll need to register for the following services and obtain API credentials:
 
 1. **LiveKit** ([Sign up](https://cloud.livekit.io/))
+
    - WebSocket URL
    - API Key
    - API Secret
 
 2. **Google Gemini AI** ([Get API Key](https://ai.google.dev/))
+
    - API Key for natural language processing
 
 3. **OAuth Providers (Optional)**
+
    - Google OAuth ([Console](https://console.cloud.google.com/))
    - GitHub OAuth ([Developer Settings](https://github.com/settings/developers))
 
@@ -293,6 +302,7 @@ docker-compose ps
 ```
 
 **Database will be available at:**
+
 - PostgreSQL: `localhost:5432`
 - pgAdmin: `http://localhost:5050`
 
@@ -454,6 +464,7 @@ npm run dev
 ### Using the Platform
 
 #### 1. Create Your Account
+
 ```bash
 # Navigate to the application
 Open http://localhost:5173 in your browser
@@ -465,6 +476,7 @@ Open http://localhost:5173 in your browser
 ```
 
 #### 2. Upload Your CV
+
 ```bash
 # Log in to your account
 # Navigate to "Interview Setup" page
@@ -480,6 +492,7 @@ Open http://localhost:5173 in your browser
 ```
 
 #### 3. Start Your Interview
+
 ```bash
 # Begin the interview session
 - Click "Start Interview"
@@ -496,6 +509,7 @@ Open http://localhost:5173 in your browser
 ```
 
 #### 4. Review Your Performance
+
 ```bash
 # Check your results
 - Detailed report sent to your email within minutes
@@ -516,35 +530,36 @@ Open http://localhost:5173 in your browser
 
 ### Authentication Endpoints
 
-| Method | Endpoint | Description | Authentication |
-|--------|----------|-------------|----------------|
-| POST | `/api/auth/register` | Create new user account | None |
-| POST | `/api/auth/login` | Authenticate user | None |
-| POST | `/api/auth/verify-email` | Verify email address | None |
-| POST | `/api/auth/resend-verification` | Resend verification email | None |
-| POST | `/api/auth/refresh` | Refresh access token | Refresh Token |
-| GET | `/api/auth/me` | Get current user info | JWT Required |
+| Method | Endpoint                        | Description               | Authentication |
+| ------ | ------------------------------- | ------------------------- | -------------- |
+| POST   | `/api/auth/register`            | Create new user account   | None           |
+| POST   | `/api/auth/login`               | Authenticate user         | None           |
+| POST   | `/api/auth/verify-email`        | Verify email address      | None           |
+| POST   | `/api/auth/resend-verification` | Resend verification email | None           |
+| POST   | `/api/auth/refresh`             | Refresh access token      | Refresh Token  |
+| GET    | `/api/auth/me`                  | Get current user info     | JWT Required   |
 
 ### Service Endpoints
 
-| Method | Endpoint | Description | Authentication |
-|--------|----------|-------------|----------------|
-| POST | `/api/upload-cv` | Upload and parse CV | JWT Required |
-| POST | `/api/start-session` | Start interview session | JWT Required |
-| POST | `/api/save-interview` | Save interview results | JWT Required |
+| Method | Endpoint              | Description             | Authentication |
+| ------ | --------------------- | ----------------------- | -------------- |
+| POST   | `/api/upload-cv`      | Upload and parse CV     | JWT Required   |
+| POST   | `/api/start-session`  | Start interview session | JWT Required   |
+| POST   | `/api/save-interview` | Save interview results  | JWT Required   |
 
 ### OAuth Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/auth/oauth/google` | Initiate Google OAuth |
-| GET | `/api/auth/oauth/google/callback` | Google OAuth callback |
-| GET | `/api/auth/oauth/github` | Initiate GitHub OAuth |
-| GET | `/api/auth/oauth/github/callback` | GitHub OAuth callback |
+| Method | Endpoint                          | Description           |
+| ------ | --------------------------------- | --------------------- |
+| GET    | `/api/auth/oauth/google`          | Initiate Google OAuth |
+| GET    | `/api/auth/oauth/google/callback` | Google OAuth callback |
+| GET    | `/api/auth/oauth/github`          | Initiate GitHub OAuth |
+| GET    | `/api/auth/oauth/github/callback` | GitHub OAuth callback |
 
 ### Interactive Documentation
 
 Visit **http://localhost:8000/docs** for:
+
 - Complete API reference with request/response schemas
 - Interactive "Try it out" functionality
 - Authentication testing interface
@@ -610,22 +625,25 @@ Jobify-UtopiaHire/
 ### Development Workflow
 
 1. **Create Feature Branch**
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
 
 2. **Make Your Changes**
+
    - Follow existing code style and conventions
    - Add clear comments for complex logic
    - Update documentation if needed
    - Write tests for new features
 
 3. **Test Locally**
+
    ```bash
    # Backend tests
    cd backend
    python -m pytest
-   
+
    # Frontend linting and build
    cd frontend
    npm run lint
@@ -633,6 +651,7 @@ Jobify-UtopiaHire/
    ```
 
 4. **Commit Your Changes**
+
    ```bash
    git add .
    git commit -m "feat: add your feature description"
@@ -664,6 +683,7 @@ Jobify-UtopiaHire/
 ### Production Checklist
 
 Security Configuration:
+
 - [ ] Change all default passwords to strong, unique values
 - [ ] Generate cryptographically secure secrets (32+ characters)
 - [ ] Configure HTTPS/SSL certificates
@@ -672,6 +692,7 @@ Security Configuration:
 - [ ] Configure database SSL/TLS connections
 
 Infrastructure:
+
 - [ ] Set up database backups and recovery procedures
 - [ ] Configure monitoring and alerting (e.g., Sentry, DataDog)
 - [ ] Set up centralized logging (e.g., ELK stack, CloudWatch)
@@ -679,6 +700,7 @@ Infrastructure:
 - [ ] Set up firewall rules and network security groups
 
 Application:
+
 - [ ] Review and adjust rate limits for production traffic
 - [ ] Test OAuth callbacks with production URLs
 - [ ] Verify email service configuration
@@ -703,6 +725,7 @@ docker-compose down
 #### Cloud Platform Deployments
 
 **Backend Options:**
+
 - Heroku (easy deployment with CLI)
 - AWS Elastic Beanstalk or ECS
 - DigitalOcean App Platform
@@ -710,12 +733,14 @@ docker-compose down
 - Google Cloud Run
 
 **Frontend Options:**
+
 - Vercel (recommended for Vite/React)
 - Netlify
 - AWS S3 + CloudFront
 - DigitalOcean Static Sites
 
 **Database Options:**
+
 - AWS RDS PostgreSQL
 - DigitalOcean Managed Database
 - Heroku Postgres
@@ -927,13 +952,14 @@ python agent.py dev --verbose
 ### Getting More Help
 
 1. **Check Application Logs**
+
    ```bash
    # Backend logs
    docker-compose logs backend -f
-   
+
    # Database logs
    docker-compose logs db -f
-   
+
    # All services
    docker-compose logs -f
    ```
@@ -959,6 +985,7 @@ Contributions are what make the open source community amazing! Any contributions
 ### How to Contribute
 
 1. **Fork the Project**
+
    ```bash
    # Click the "Fork" button on GitHub
    # Clone your fork
@@ -966,21 +993,26 @@ Contributions are what make the open source community amazing! Any contributions
    ```
 
 2. **Create your Feature Branch**
+
    ```bash
    git checkout -b feature/AmazingFeature
    ```
 
 3. **Make Your Changes**
+
    - Write clean, documented code
    - Follow the existing code style
    - Add tests if applicable
    - Update documentation as needed
 
 4. **Commit your Changes**
+
    ```bash
    git commit -m 'feat: Add some AmazingFeature'
    ```
+
    Use conventional commit format:
+
    - `feat:` - New features
    - `fix:` - Bug fixes
    - `docs:` - Documentation changes
@@ -990,6 +1022,7 @@ Contributions are what make the open source community amazing! Any contributions
    - `chore:` - Maintenance tasks
 
 5. **Push to the Branch**
+
    ```bash
    git push origin feature/AmazingFeature
    ```
@@ -1057,7 +1090,7 @@ Special thanks to all contributors and users who help improve this platform!
 
 **Built with ❤️ for better interview preparation**
 
-*Empowering job seekers with AI-powered practice and feedback*
+_Empowering job seekers with AI-powered practice and feedback_
 
 [![GitHub stars](https://img.shields.io/github/stars/Jobify-UtopiaHire/Jobify-UtopiaHire?style=social)](https://github.com/Jobify-UtopiaHire/Jobify-UtopiaHire/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/Jobify-UtopiaHire/Jobify-UtopiaHire?style=social)](https://github.com/Jobify-UtopiaHire/Jobify-UtopiaHire/network/members)
